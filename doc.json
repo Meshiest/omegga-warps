@@ -1,0 +1,106 @@
+{
+  "name": "warps",
+  "description": "A warps plugin for teleporting places and setting homes",
+  "author": "cake",
+  "commands": [
+    {
+      "name": "/setwarp",
+      "description": "Set your current position as a named warp destination",
+      "example": "/setwarp Cool House",
+      "args": [
+        {
+          "name": "destination",
+          "description": "Name of saved warp destination",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "/delwarp",
+      "description": "Remove an existing warp destination",
+      "example": "/delwarp Cool House",
+      "args": [
+        {
+          "name": "destination",
+          "description": "Name of existing warp destination",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "/clearwarps",
+      "description": "Clear all stored warps and homes",
+      "example": "/clearwarps",
+      "args": []
+    },
+    {
+      "name": "/warp",
+      "description": "Warp to a destination",
+      "example": "/warp Cool House",
+      "args": [
+        {
+          "name": "destination",
+          "description": "Name of existing warp destination",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "/warps",
+      "description": "List available warps",
+      "example": "/warps 1",
+      "args": [
+        {
+          "name": "Page",
+          "description": "Page number for warps",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "/home",
+      "description": "Teleport home. Authorized users can teleport to other users' homes.",
+      "example": "/home Aware",
+      "args": [
+        {
+          "name": "Target player",
+          "description": "Name of player",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "/sethome",
+      "description": "Set home warp.",
+      "example": "/sethome",
+      "args": []
+    }
+  ],
+  "config": {
+    "only-authorized": {
+      "description": "Whether only authorized players can use warp management commands",
+      "type": "boolean",
+      "default": true
+    },
+    "authorized-users": {
+      "description": "List of players who can always use warp management commands",
+      "type": "players",
+      "default": []
+    },
+    "warp-enabled": {
+      "description": "Whether non-authorized users can warp and list warps",
+      "type": "boolean",
+      "default": true
+    },
+    "home-enabled": {
+      "description": "Whether non-authorized users can set a home warp",
+      "type": "boolean",
+      "default": false
+    },
+    "warp-cooldown": {
+      "description": "Seconds between warps for non-authorized users",
+      "type": "number",
+      "default": 0
+    }
+  }
+}
