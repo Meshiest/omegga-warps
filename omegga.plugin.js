@@ -54,7 +54,7 @@ module.exports = class Warps {
     Omegga.writeln(
       `Chat.Command /TP "${name}" ${x} ${y} ${z} ${
         Omegga.version >= 7784 ? 0 : ''
-      }`
+      } 0`
     );
   }
 
